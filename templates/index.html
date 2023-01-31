@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+</head>
+<style>
+    h1{text-align: center;}
+    h3{text-align: center;}
+    form {margin: 0 auto; display: grid; justify-content: center; align-items: center;}
+</style>
+<body>
+    <h1><br>Real Estate Price Prediction</h3>
+    <form action="{{url_for('predict')}}" method="post" >
+    <p>
+        <label for="area">Area of house: <input type = "text" name = "area" placeholder="">sqft.</input></label>
+    </p>
+
+    <p>
+        <label for="bedrooms">Number of bedrooms:</label>
+        <input type = "text" name = "bedrooms" placeholder=""></input>
+    </p>
+    
+    <p>
+        <label for="bathrooms">Number of bathrooms:</label>
+        <input type = "text" name = "bathrooms" placeholder=""></input>
+    </p>
+
+    <p>
+        <label for="stories">Number of stories:</label>
+        <input type = "text" name = "stories" placeholder=""></input>
+    </p> 
+    
+    <p>
+        <label for="mainroad">Mainroad:</label>
+        <select name="mainroad" id="mainroad">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+        </select>
+    </p>
+    
+    <p>
+        <label for="guestroom">Guestroom:</label>
+        <select name="guestroom" id="guestroom">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+        </select>
+    </p>
+    
+    <p>
+        <label for="basement">Basement:</label>
+        <select name="basement" id="basement">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+        </select>
+    </p>
+    
+    <p>
+        <label for="hotwaterheating">Hotwaterheating Facility:</label>
+        <select name="hotwaterheating" id="hotwaterheating">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+        </select>
+    </p>
+    
+    <p>
+        <label for="airconditioning">Airconditioner:</label>
+        <select name="airconditioning" id="airconditioning">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+        </select>
+    </p>
+    
+    <p>
+        <label for="parking">Number of Parking:</label>
+        <input type = "text" name = "parking" placeholder=""></input>
+    </p>
+    
+    <p>
+        <label for="prefarea">Prefarea:</label>
+        <select name="prefarea" id="prefarea">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+        </select>
+    </p>
+    
+    <p> 
+        <label for="furnishingstatus">Furnishing</label>
+        <select name="furnishingstatus" id="furnishingstatus">
+        <option value="0">Unfurnished</option>
+        <option value="1">Semifurnished</option>
+        <option value="2">Furnished</option>
+        </select>
+    </p>
+        <button type = "Submit" style = "margin: 0 auto; width : 100px;">Submit</button>
+    </form>
+    
+    <h3><br>{{prediction_text}}</h3>
+
+    <p style="text-align:right"> 
+        <label for="Name">Made By ~ Dhruv Kejriwal</label>
+    </p>
+</body>
+</html>
