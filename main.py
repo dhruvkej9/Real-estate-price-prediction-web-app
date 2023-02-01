@@ -1,5 +1,6 @@
 import pickle
 from flask import Flask, render_template, request
+from numerize import numerize
 #create an object of the class Flask
 app = Flask(__name__)
 model = pickle.load(open("model.pkl","rb"))
@@ -17,7 +18,7 @@ def predict():
         request.form.get('airconditioning'),request.form.get('parking'),request.form.get('prefarea')
         ,request.form.get('furnishingstatus')]])
         output = round(prediction[0])
-        return render_template("index.html",prediction_text=f'Estimated Cost of House is ₹{output}/-')
+        return render_template("index.html",prediction_text=f'Estimated Cost of House is ₹{numerize.numerize(output)}/-')
     except:
         return render_template("index.html",prediction_text='Invalid Input!')
 
